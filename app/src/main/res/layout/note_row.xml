@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/pinkL">
+            android:background="#FDE9E3">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,8 +34,9 @@
                     android:gravity="center"
                     android:padding="6dp"
                     android:text="TextView"
+                    android:fontFamily="monospace"
                     android:textAlignment="center"
-                    android:textColor="#616161"
+                    android:textColor="@color/teal_700"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -53,6 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
                     android:minHeight="48dp"
+                    android:backgroundTint="@color/grnL"
                     app:srcCompat="@drawable/edit_icon"
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
@@ -62,6 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
                     android:minHeight="48dp"
+                    android:backgroundTint="@color/grnL"
                     app:srcCompat="@drawable/del_icon"
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
             </LinearLayout>
