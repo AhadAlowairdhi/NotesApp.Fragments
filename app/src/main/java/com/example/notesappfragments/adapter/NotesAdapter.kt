@@ -1,10 +1,13 @@
 package com.example.notesappfragments.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notesappfragments.DB.Notes
 import com.example.notesappfragments.HomeFragment
+import com.example.notesappfragments.R
 import com.example.notesappfragments.databinding.NoteRowBinding
 
 
@@ -22,6 +25,18 @@ class NotesAdapter(val Fragment: HomeFragment,var notesList: List<Notes>): Recyc
 
         holder.binding.apply {
             tvNote.text = aNote.note
+            tvNote.setOnClickListener {
+                val sendIntent: Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(
+                        Intent.EXTRA_TEXT, tvNote.text)
+                    type = "text/plain"
+
+
+                }
+                val shareIntent = Intent.createChooser(sendIntent, null)
+                Fragment.startActivity(shareIntent)
+            }
 
             edtNote.setOnClickListener{
                 with(Fragment.sharedPreferences.edit()){
